@@ -220,7 +220,7 @@ $('#universidade').fadeOut('slow');
                                       <hr style="margin-bottom: 30px; margin-top: 30px">
                                       
 
-                                      <h3>Simulador de Proposta II</h3>
+                                      <h3>Simulador de Proposta</h3>
                                       <p style="margin-top: -10px; color: #909497;">Insira os dados a respeito do cliente, selecione os planos ou produtos desejados e calcule os valores .</p>
 
                                       <br>
@@ -281,7 +281,7 @@ $('#universidade').fadeOut('slow');
                                         </select>
                                     </div>
 
-                                    <div class="form-group" style="display: none">
+                                    <div class="form-group" style="display: none;">
                                       <input type="text" name="hello" oninput="CalcPlanFit();" id="mySelect">
                                     </div>
 
@@ -319,7 +319,7 @@ $('#universidade').fadeOut('slow');
                                       <input type="text" id="num_casas" name="numero_casas" value="" title="Quantidade de Acessos" oninput="CalcCasas(); CalcPlanFit(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 5" style="margin-bottom: 20px;">
                                     </div>
 
-                                    <div class="form-group" style="display: none">
+                                    <div class="form-group" style="display: none;">
                                       <input type="text" name="hello" id="acrescasas">
                                     </div>
 
@@ -330,7 +330,7 @@ $('#universidade').fadeOut('slow');
 
                                     </div>
 
-                                    <div class="form-group" style="display: none">
+                                    <div class="form-group" style="display: none;">
                                       <input type="text" name="hello" id="acrescolab">
                                     </div>
 
@@ -567,6 +567,10 @@ $('#universidade').fadeOut('slow');
 
       function CalcPlanFit (){
 
+        document.getElementById('parc_plan_fit').innerHTML = '';
+        document.getElementById('bol_plan_fit').innerHTML = '';
+        document.getElementById('vista_plan_fit').innerHTML = '';
+
         var ValorPlan = document.getElementById('mySelect').value;
         var AcresCasas = document.getElementById('acrescasas').value;
         var AcresColab = document.getElementById('acrescolab').value; 
@@ -576,9 +580,27 @@ $('#universidade').fadeOut('slow');
           var STPF = ValorPlan;
 
           var GrandPlanFit = STPF * 12
+          var Bol = GrandPlanFit / 2;
+          var PorcentVista = GrandPlanFit * 0.05
+
+          var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
+
+          
+          var o = document.getElementById('parc_plan_fit');
+          o.innerHTML += '400';
+
+          
+          var b = document.getElementById('bol_plan_fit');
+          b.innerHTML += Bol;
+
+
+         var v = document.getElementById('vista_plan_fit');
+         v.innerHTML += Vista;
+
+
         }
 
-        if (AcresCasas <= 0 && AcresColab > 0) {
+        if (AcresCasas <= 0 && AcresColab > 0.1) {
           var PorcentPlanFit = ValorPlan * AcresColab;
 
           var STPF = parseFloat(ValorPlan) + parseFloat(PorcentPlanFit);
@@ -601,15 +623,23 @@ $('#universidade').fadeOut('slow');
          v.innerHTML += Vista;
         }
 
-        if (AcresCasas > 0 && AcresColab > 0) {
 
-          var Base = ValorPlan * NumCasasFin
+        if (AcresCasas > 0.1 && AcresColab > 0.1 || AcresCasas > 0.1 && AcresColab <= 0) {
 
-          var PorcentPlanFit = Base * AcresColab;
+          var NumCasasAtu = NumCasasFin - 1;
 
-          var STPF = parseFloat(Base) + parseFloat(PorcentPlanFit);
+          var Base = ValorPlan * AcresCasas * NumCasasAtu
 
-          var GrandPlanFit = STPF * 12;
+          var STPF = parseFloat(ValorPlan) + parseFloat(Base);
+
+          var PorcentPlanFit = STPF * AcresColab;
+          
+          var ValorMes = parseFloat(STPF) + parseFloat(PorcentPlanFit);
+
+          var num = ValorMes * 12;
+
+          var GrandPlanFit = num.toFixed(2);
+
           var Bol = GrandPlanFit / 2;
           var PorcentVista = GrandPlanFit * 0.05
 
