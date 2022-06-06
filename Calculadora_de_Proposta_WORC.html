@@ -600,7 +600,7 @@ $('#universidade').fadeOut('slow');
 
         }
 
-        if (AcresCasas <= 0 && AcresColab > 0.1) {
+        if (AcresCasas <= 0 && AcresColab > 0.01) {
           var PorcentPlanFit = ValorPlan * AcresColab;
 
           var STPF = parseFloat(ValorPlan) + parseFloat(PorcentPlanFit);
@@ -624,7 +624,7 @@ $('#universidade').fadeOut('slow');
         }
 
 
-        if (AcresCasas > 0.1 && AcresColab > 0.1 || AcresCasas > 0.1 && AcresColab <= 0) {
+        if (AcresCasas > 0.01 && AcresColab > 0.01 || AcresCasas > 0.01 && AcresColab <= 0) {
 
           var NumCasasAtu = NumCasasFin - 1;
 
