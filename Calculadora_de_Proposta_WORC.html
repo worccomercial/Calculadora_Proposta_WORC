@@ -503,36 +503,32 @@ $('#universidade').fadeOut('slow');
 
         var NumCasas = document.getElementById('num_casas').value; 
 
-        if (NumCasas <= 1) {
+        if (NumCasas < 1) {
           var AcresCasas = 0;
         }
 
-        if (NumCasas > 1 && NumCasas <= 2) {
+        if (NumCasas >= 1 && NumCasas <= 2) {
           var AcresCasas = 0.6;
         }
 
         if (NumCasas > 2 && NumCasas <= 3) {
-          var AcresCasas = 0.4;
-        }
-
-        if (NumCasas > 3 && NumCasas <= 4) {
           var AcresCasas = 0.3;
         }
 
-        if (NumCasas > 4 && NumCasas <= 5) {
+        if (NumCasas > 3 && NumCasas <= 4) {
           var AcresCasas = 0.25;
         }
 
-        if (NumCasas > 5 && NumCasas <= 6) {
+        if (NumCasas > 4 && NumCasas <= 5) {
           var AcresCasas = 0.22;
         }
 
-        if (NumCasas > 6 && NumCasas <= 7) {
+        if (NumCasas > 5 && NumCasas <= 6) {
           var AcresCasas = 0.2;
         }
 
-        if (NumCasas > 7) {
-          var AcresCasas = 0.7;
+        if (NumCasas > 6) {
+          var AcresCasas = 0.18;
         }
 
         document.getElementById('acrescasas').value = AcresCasas;
