@@ -179,7 +179,7 @@ $('#universidade').fadeOut('slow');
   <body style="background-color: #dbf5ff">
 
     <!-- partial -->
-          <div class="content-wrapper">
+          <div class="content-wrapper" style="margin-top: -70px">
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
@@ -343,7 +343,7 @@ $('#universidade').fadeOut('slow');
 
                               
 
-                                  <div id="plan_section" style="display: none;">
+                                  <div id="plan_section" style="display: none">
 
                                     <div class="form-group" style="font-size: 30px;">  
                                       <label>Total:</label>
@@ -357,7 +357,9 @@ $('#universidade').fadeOut('slow');
 
                                     
 
-                                    <b><i>Taxa de Implementação: 
+                                    <b>
+
+                                      <i style="font-size: 14px;">Taxa de Implementação: 
 
                                       <span id="imp_fit" style="display: none">R$700,00</span>
 
@@ -371,17 +373,30 @@ $('#universidade').fadeOut('slow');
                                       </span>
 
 
-                                    </i><br><br></b>
+                                    </i><br>
+
+                                     
+
+                                     <br></b>
 
 
 
 
 
+                                   
                                     <i style="font-size: 13px;">12 parcelas de R$<span id="parc_plan_fit"></span> por mês no cartão de crédito (sem juros)</i><br><br>
                                     <i style="font-size: 13px;">2 parcelas de R$<span id="bol_plan_fit"></span> no boleto</i><br><br>
                                     <i style="font-size: 13px;">R$<span id="vista_plan_fit"></span> à vista (5% de desconto)</i><br><br>
 
+                                    <a href="javascript:void(0);" onclick="return BxhNam();" style="text-decoration: none; background-color: #C0392B; padding: 5px; font-size: 14px; color: white; border-radius: 5px">Consultar Preço Mínimo</a><br><br>
+
+                                     <div id="Top5" style=" display:none">
+                                       <i id="tow" style="color: red; font-size: 15px;">Preço mínimo aprovado (10% disc.): R$<span id="preco_minimo"></span></i><br><br>
+                                     </div>         
+
                                   </div>
+
+                                                           
 
                                   <div id="prod_section" style="display: none;">
 
@@ -483,6 +498,11 @@ $('#universidade').fadeOut('slow');
 
     <script type="text/javascript">
 
+      //Preço Mínimo
+      var PrecoMin = "";
+      var z = document.getElementById('preco_minimo');
+        z.innerHTML += PrecoMin;
+
       //12x parcelado
       var STPF = "";
       var o = document.getElementById('parc_plan_fit');
@@ -531,6 +551,7 @@ $('#universidade').fadeOut('slow');
           var AcresCasas = 0.18;
         }
 
+
         document.getElementById('acrescasas').value = AcresCasas;
       }
 
@@ -563,6 +584,7 @@ $('#universidade').fadeOut('slow');
 
       function CalcPlanFit (){
 
+        document.getElementById('preco_minimo').innerHTML = '';
         document.getElementById('parc_plan_fit').innerHTML = '';
         document.getElementById('bol_plan_fit').innerHTML = '';
         document.getElementById('vista_plan_fit').innerHTML = '';
@@ -581,9 +603,16 @@ $('#universidade').fadeOut('slow');
 
           var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
 
+          var PorcentDiscount = GrandPlanFit * 0.10
+
+          var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
+
           
+          var z = document.getElementById('preco_minimo');
+          z.innerHTML += PrecoMin;
+
           var o = document.getElementById('parc_plan_fit');
-          o.innerHTML += '400';
+          o.innerHTML += STPF;
 
           
           var b = document.getElementById('bol_plan_fit');
@@ -607,6 +636,15 @@ $('#universidade').fadeOut('slow');
 
           var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
 
+          var PorcentDiscount = GrandPlanFit * 0.10
+
+          var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
+
+          
+          var z = document.getElementById('preco_minimo');
+          z.innerHTML += PrecoMin;
+
+
           
           var o = document.getElementById('parc_plan_fit');
           o.innerHTML += STPF;
@@ -620,7 +658,7 @@ $('#universidade').fadeOut('slow');
         }
 
 
-        if (AcresCasas > 0.01 && AcresColab > 0.01 || AcresCasas > 0.01 && AcresColab <= 0) {
+        if (AcresCasas > 0.01 && AcresColab > 0.01 || AcresCasas > 0.1 && AcresColab <= 0) {
 
           var NumCasasAtu = NumCasasFin - 1;
 
@@ -640,6 +678,14 @@ $('#universidade').fadeOut('slow');
           var PorcentVista = GrandPlanFit * 0.05
 
           var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
+
+          var PorcentDiscount = GrandPlanFit * 0.10
+
+          var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
+
+          
+          var z = document.getElementById('preco_minimo');
+          z.innerHTML += PrecoMin;
 
           
           var o = document.getElementById('parc_plan_fit');
@@ -718,6 +764,15 @@ $('#universidade').fadeOut('slow');
     }
 
 </style>
+
+<script> 
+     function BxhNam() {
+
+      $('#Top5').fadeIn('slow');
+
+      
+     }
+</script>
 
 <script type="text/javascript">
   function showDiv(divId, element){
