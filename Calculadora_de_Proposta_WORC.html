@@ -69,7 +69,11 @@
        $('#produtos').hide();
        $('#admissao').hide();
        $('#universidade').hide();
+       $('#numero_de_casas').hide();
+       $('#colaboradores_por_casa').hide();
+       $('#plan_section').hide();
        $('#prod_section').hide();
+
         }
 
        if ($('#met_prop').val() == 'Por plano') {
@@ -77,7 +81,11 @@
        $('#produtos').hide();
        $('#admissao').hide();
        $('#universidade').hide();
+       $('#numero_de_casas').hide();
+       $('#colaboradores_por_casa').hide();
+       $('#plan_section').fadeIn();
        $('#prod_section').hide();
+
        }
 
        if ($('#met_prop').val() == 'Por produto') {
@@ -85,6 +93,9 @@
        $('#produtos').fadeIn();
        $('#admissao').hide();
        $('#universidade').hide();
+       $('#numero_de_casas').hide();
+       $('#colaboradores_por_casa').hide();
+       $('#plan_section').hide();
        $('#prod_section').fadeIn();
 
        }
@@ -105,6 +116,9 @@
        $('#imp_fit').hide();
        $('#imp_plus').hide();
        $('#imp_prem').hide();
+       $('#numero_de_casas').hide();
+       $('#colaboradores_por_casa').hide();
+       $('#colaboradores_por_casa').hide();
 
        document.getElementById("mySelect").value = "";
        
@@ -116,6 +130,9 @@
        $('#imp_fit').fadeIn();
        $('#imp_plus').hide();
        $('#imp_prem').hide();
+       $('#numero_de_casas').fadeIn();
+       $('#colaboradores_por_casa').fadeIn();
+
 
        document.getElementById("mySelect").value = "490";
 
@@ -127,6 +144,8 @@
        $('#imp_fit').hide();
        $('#imp_plus').fadeIn();
        $('#imp_prem').hide();
+       $('#numero_de_casas').fadeIn();
+       $('#colaboradores_por_casa').fadeIn();
 
 
        document.getElementById("mySelect").value = "680";
@@ -139,6 +158,8 @@
        $('#imp_fit').hide();
        $('#imp_plus').hide();
        $('#imp_prem').fadeIn();
+       $('#numero_de_casas').fadeIn();
+       $('#colaboradores_por_casa').fadeIn();
 
        document.getElementById("mySelect").value = "980";
        }
@@ -164,11 +185,107 @@ $('#admissao').fadeOut('slow');
 
     <script type="text/javascript">
       $(document).ready(function(){
-$('#edu_opt').change(function(){
+$('.dopex').change(function(){
+if(this.checked)
+$('#admissao').fadeIn('slow');
+else
+$('#admissao').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.dopex').change(function(){
+if(this.checked)
+$('#numero_de_casas').fadeIn('slow');
+else
+$('#numero_de_casas').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.dope').change(function(){
+if(this.checked)
+$('#numero_de_casas').fadeIn('slow');
+else
+$('#numero_de_casas').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.recru_opt').change(function(){
+if(this.checked)
+$('#numero_de_casas').fadeIn('slow');
+else
+$('#numero_de_casas').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.edu_opt').change(function(){
 if(this.checked)
 $('#universidade').fadeIn('slow');
 else
 $('#universidade').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.recru_opt').change(function(){
+if(this.checked)
+$('#recrut_tot').fadeIn('slow');
+else
+$('#recrut_tot').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.dopex').change(function(){
+if(this.checked)
+$('#doc_tot').fadeIn('slow');
+else
+$('#doc_tot').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.dope').change(function(){
+if(this.checked)
+$('#onb_tot').fadeIn('slow');
+else
+$('#onb_tot').fadeOut('slow');
+
+});
+});
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+$('.edu_opt').change(function(){
+if(this.checked)
+$('#edu_tot').fadeIn('slow');
+else
+$('#edu_tot').fadeOut('slow');
 
 });
 });
@@ -237,7 +354,7 @@ $('#universidade').fadeOut('slow');
                                         <input name="responsavel" type="text"> 
                                     </div>
 
-                                    <div class="form-group" style="margin-bottom: 20px;">  
+                                    <div class="form-group" style="margin-bottom: 10px;">  
                                       <label for="cars">AE (Closer): </label>
                                         <select name="closer" onchange="showDiv('hidden_div', this)">
                                           <option value="">Selecione seu nome</option>
@@ -267,11 +384,11 @@ $('#universidade').fadeOut('slow');
                                         <select name="met_proposta" id="met_prop">
                                           <option value="">Selecione uma opção</option>
                                           <option value="Por plano">Por plano</option>
-                                          <option value="Por produto" disabled>Por produto</option>
+                                          <option value="Por produto">Por produto</option>
                                         </select>
                                     </div>
 
-                                    <div class="form-group" style="margin-bottom: 20px; display: none;" id="planos">  
+                                    <div class="form-group" style="margin-bottom: 10px; display: none;" id="planos">  
                                       <label for="cars">Plano: </label>
                                         <select name="plano" id="planos_opt">
                                           <option value="">Selecione uma opção</option>
@@ -286,16 +403,16 @@ $('#universidade').fadeOut('slow');
                                     </div>
 
 
-                                  <div class="form-group" style="margin-bottom: 20px; display: none;" id="produtos">  
+                                  <div class="form-group" style="margin-bottom: 0px; display: none;" id="produtos">  
                                     <label for="cars">Produto:</label>
                                     <br>
-                                    <input type="checkbox" id="vehicle1" name="product_one" value="Recrutamento + Ponto Eletrônico">
+                                    <input type="checkbox" class="recru_opt" name="product_one" value="Recrutamento + Ponto Eletrônico">
                                     <label for="vehicle1"> Recrutamento + Ponto Eletrônico</label><br>
-                                    <input type="checkbox" class="dope" name="product_two" value="Documentação">
+                                    <input type="checkbox" class="dopex" name="product_two" value="Documentação">
                                     <label for="vehicle2"> Documentação</label><br>
                                     <input type="checkbox" class="dope" name="product_three" value="Onboarding">
                                     <label for="vehicle3"> Onboarding</label><br>
-                                    <input type="checkbox" id="edu_opt" name="product_four" value="Educação">
+                                    <input type="checkbox" class="edu_opt" name="product_four" value="Educação">
                                     <label for="vehicle3"> Educação</label><br><br>
                                   </div>
 
@@ -303,20 +420,11 @@ $('#universidade').fadeOut('slow');
 
                                   <input id="date" name="prop_date" style="display:none">
 
-                                 
-                                  <div class="form-group" style="display: none;" id="admissao">  
-                                      <label>Admissões p/ Mês:</label>
-                                      <input type="text" id="medprop" name="admissao_mes" oninput="CalcProp(); CfProp(); CalcTot(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 25" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
-                                    </div>
+                                  <div id="numero_de_casas" style="display:none ">
 
-                                    <div class="form-group" style="display: none;" id="universidade">  
-                                      <label>Acessos à universidade:</label>
-                                      <input type="text" id="medprop" name="acess_universidade" oninput="CalcProp(); CfProp(); CalcTot(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 50" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
-                                    </div>
-
-                                    <div class="form-group field">  
+                                      <div class="form-group field">  
                                       <label>Número de Casas:</label>
-                                      <input type="text" id="num_casas" name="numero_casas" value="" title="Quantidade de Acessos" oninput="CalcCasas(); CalcPlanFit(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 5" style="margin-bottom: 20px;">
+                                      <input type="text" id="num_casas" name="numero_casas" value="" title="Quantidade de Acessos" oninput="CalcCasas(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 5" style="margin-bottom: 20px;">
                                     </div>
 
                                     <div class="form-group" style="display: none;">
@@ -325,7 +433,22 @@ $('#universidade').fadeOut('slow');
 
                                     <div class="form-group field">  
                                       <label>Colaboradores p/ Casa:</label>
-                                      <input type="text" id="colab_casa" value="" name="colabas_pcasa" oninput="CalcColabs(); CalcPlanFit(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                      <input type="text" id="colab_casa" value="" name="colabas_pcasa" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                    </div>
+
+                                  </div>
+
+                                    <div class="form-group" style="display: none;" id="admissao">  
+                                      <label>Admissões & Onboarding p/ Mês:</label>
+                                      <input type="text" id="adm_onb" value="" name="admissao_mes" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                    </div>
+
+                                    <div class="form-group" style="display: none;" id="universidade">  
+                                      <label>Acessos à universidade:</label>
+                                      <input type="text" id="acessos_univ" value="" name="acess_universidade" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcEdu(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                    </div>
+
+
                                     </div>
 
                                     </div>
@@ -341,9 +464,9 @@ $('#universidade').fadeOut('slow');
                                   
                               <hr style="margin-bottom: 30px; margin-top: 30px">
 
-                              
+                                <div id="preco_geral" style="display: none">
 
-                                  <div id="plan_section" style="display: none">
+                                  <div id="plan_section" style="display: none" >
 
                                     <div class="form-group" style="font-size: 30px;">  
                                       <label>Total:</label>
@@ -355,8 +478,6 @@ $('#universidade').fadeOut('slow');
 
                                   </form>  
 
-                                    
-
                                     <b>
 
                                       <i style="font-size: 14px;">Taxa de Implementação: 
@@ -367,23 +488,18 @@ $('#universidade').fadeOut('slow');
 
                                       <span id="imp_prem" style="display: none">
                                         R$1.5000,00<br><br>
-                                        + R$9.800,00 para até 10 vídeos feitos pela WORC <br>
+                                        + R$9.800,00 para até 10 vídeos feitos pela WORC <i style="font-size: 12px; font-weight: 300; color: #2cc4f4">(R$ 980,00 por vídeo extra)</i><br>
                                         OU<BR>
-                                        + R$2.800,00 para subir 10 vídeos de produção terceira
+                                        + R$2.800,00 para subir 10 vídeos de produção terceira <i style="font-size: 12px; font-weight: 300; color: #2cc4f4">(R$ 280,00 por vídeo extra)</i>
                                       </span>
 
 
                                     </i><br>
 
                                      
-
                                      <br></b>
 
-
-
-
-
-                                   
+         
                                     <i style="font-size: 13px;">12 parcelas de R$<span id="parc_plan_fit"></span> por mês no cartão de crédito (sem juros)</i><br><br>
                                     <i style="font-size: 13px;">2 parcelas de R$<span id="bol_plan_fit"></span> no boleto</i><br><br>
                                     <i style="font-size: 13px;">R$<span id="vista_plan_fit"></span> à vista (5% de desconto)</i><br><br>
@@ -398,31 +514,40 @@ $('#universidade').fadeOut('slow');
 
                                                            
 
-                                  <div id="prod_section" style="display: none;">
+                                  <div id="prod_section" style="display: none">
 
-                                    <div class="form-group" style="font-size: 16px;" id="recrut_tot">  
+                                    <div class="form-group" style="font-size: 16px; display: none; margin-bottom: 20px;" id="recrut_tot">  
                                       <label>Total Recrutamento + Ponto Eletrônico:</label>
                                       <label for="dinheiro" style="color: #45b8e3">R$</label>
-                                      <input type="text" id="grandtotal" placeholder="800" title="Total" readonly="true" style="margin-bottom: 20px; background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <input type="text" id="grandtotal_recrut" name="valor_tot_recru" placeholder="0" title="Total" readonly="true" style=" background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <br><b style="font-size: 14px;">Taxa de Implementação: R$700,00</b>
                                     </div>
 
-                                    <div class="form-group" style="font-size: 16px;" id="doc_tot">  
+                                    <div class="form-group" style="font-size: 16px; display: none; margin-bottom: 20px;" id="doc_tot">  
                                       <label>Total Documentação:</label>
                                       <label for="dinheiro" style="color: #45b8e3">R$</label>
-                                      <input type="text" id="grandtotal" placeholder="800" title="Total" readonly="true" style="margin-bottom: 20px; background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <input type="text" id="grandtotal_docs" placeholder="0" name="valor_tot_doc" title="Total" readonly="true" style=" background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <br><b style="font-size: 14px;">Taxa de Implementação: R$<span id="doc_implemen"></span></b>
                                     </div>
 
-                                    <div class="form-group" style="font-size: 16px;" id="onb_tot">  
+                                    <div class="form-group" style="font-size: 16px; display: none; margin-bottom: 20px;" id="onb_tot">  
                                       <label>Total Onboarding:</label>
                                       <label for="dinheiro" style="color: #45b8e3">R$</label>
-                                      <input type="text" id="grandtotal" placeholder="800" title="Total" readonly="true" style="margin-bottom: 20px; background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <input type="text" id="grandtotal_onb" placeholder="0" title="Total" name="valor_tot_onb" readonly="true" style="background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <br><b style="font-size: 14px;">Taxa de Implementação: R$<span id="onb_implemen"></span></b>
                                     </div>
 
-                                    <div class="form-group" style="font-size: 16px;" id="edu_tot">  
+                                    <div class="form-group" style="font-size: 16px; display: none;" id="edu_tot">  
                                       <label>Total Educação:</label>
                                       <label for="dinheiro" style="color: #45b8e3">R$</label>
-                                      <input type="text" id="grandtotal" placeholder="800" title="Total" readonly="true" style="margin-bottom: 20px; background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <input type="text" id="grandtotal_edu" name="valor_tot_edu" placeholder="0" title="Total" readonly="true" style="background-color: white; border: 1px solid transparent; pointer-events: none; color: #45b8e3; font-size: 16px">
+                                      <br><b style="font-size: 14px;">Taxa de Implementação: R$1.5000,00<br>
+                                        + R$9.800,00 para até 10 vídeos feitos pela WORC <i style="font-size: 12px; font-weight: 300; color: #2cc4f4">(R$ 980,00 por vídeo extra)</i><br>
+                                        OU<BR>
+                                        + R$2.800,00 para subir 10 vídeos de produção terceira <i style="font-size: 12px; font-weight: 300; color: #2cc4f4">(R$ 280,00 por vídeo extra)</i></b>
                                     </div>
+
+                                  </div>
 
 
                                   </div>
@@ -492,7 +617,7 @@ $('#universidade').fadeOut('slow');
 
     <script type="text/javascript">
         function showPricePlan() {
-          document.getElementById('plan_section').style.display = "block";
+          document.getElementById('preco_geral').style.display = "block";
           }
       </script> 
 
@@ -581,6 +706,10 @@ $('#universidade').fadeOut('slow');
 
         document.getElementById('acrescolab').value = AcresCasas;
       }
+
+    </script>
+
+    <script type="text/javascript">
 
       function CalcPlanFit (){
 
@@ -701,6 +830,873 @@ $('#universidade').fadeOut('slow');
 
         
          document.getElementById('gt_plan_fit').value = GrandPlanFit;
+
+      }
+
+    </script>
+
+    <script type="text/javascript">
+
+      function CalcRecrut (){
+
+        document.getElementById('preco_minimo').innerHTML = '';
+        document.getElementById('parc_plan_fit').innerHTML = '';
+        document.getElementById('bol_plan_fit').innerHTML = '';
+        document.getElementById('vista_plan_fit').innerHTML = '';
+
+        var ValorPlan = 490;
+        var AcresCasas = document.getElementById('acrescasas').value;
+        var AcresColab = document.getElementById('acrescolab').value; 
+        var NumCasasFin = document.getElementById('num_casas').value; 
+
+        if (AcresCasas <= 0 && AcresColab <= 0) {
+          var STPF = ValorPlan;
+
+          var GrandPlanFit = STPF * 12
+          var Bol = GrandPlanFit / 2;
+          var PorcentVista = GrandPlanFit * 0.05
+
+          var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
+
+          var PorcentDiscount = GrandPlanFit * 0.10
+
+          var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
+
+          
+          var z = document.getElementById('preco_minimo');
+          z.innerHTML += PrecoMin;
+
+          var o = document.getElementById('parc_plan_fit');
+          o.innerHTML += STPF;
+
+          
+          var b = document.getElementById('bol_plan_fit');
+          b.innerHTML += Bol;
+
+
+         var v = document.getElementById('vista_plan_fit');
+         v.innerHTML += Vista;
+
+
+        }
+
+        if (AcresCasas <= 0 && AcresColab > 0.01) {
+          var PorcentPlanFit = ValorPlan * AcresColab;
+
+          var STPF = parseFloat(ValorPlan) + parseFloat(PorcentPlanFit);
+
+          var GrandPlanFit = STPF * 12;
+          var Bol = GrandPlanFit / 2;
+          var PorcentVista = GrandPlanFit * 0.05
+
+          var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
+
+          var PorcentDiscount = GrandPlanFit * 0.10
+
+          var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
+
+          
+          var z = document.getElementById('preco_minimo');
+          z.innerHTML += PrecoMin;
+
+
+          
+          var o = document.getElementById('parc_plan_fit');
+          o.innerHTML += STPF;
+
+          
+          var b = document.getElementById('bol_plan_fit');
+          b.innerHTML += Bol;
+
+         var v = document.getElementById('vista_plan_fit');
+         v.innerHTML += Vista;
+        }
+
+
+        if (AcresCasas > 0.01 && AcresColab > 0.01 || AcresCasas > 0.1 && AcresColab <= 0) {
+
+          var NumCasasAtu = NumCasasFin - 1;
+
+          var Base = ValorPlan * AcresCasas * NumCasasAtu
+
+          var STPF = parseFloat(ValorPlan) + parseFloat(Base);
+
+          var PorcentPlanFit = STPF * AcresColab;
+          
+          var ValorMes = parseFloat(STPF) + parseFloat(PorcentPlanFit);
+
+          var num = ValorMes * 12;
+
+          var GrandPlanFit = num.toFixed(2);
+
+          var Bol = GrandPlanFit / 2;
+          var PorcentVista = GrandPlanFit * 0.05
+
+          var Vista = parseFloat(GrandPlanFit) - parseFloat(PorcentVista);
+
+          var PorcentDiscount = GrandPlanFit * 0.10
+
+          var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
+
+          
+          var z = document.getElementById('preco_minimo');
+          z.innerHTML += PrecoMin;
+
+          
+          var o = document.getElementById('parc_plan_fit');
+          o.innerHTML += ValorMes;
+
+          
+          var b = document.getElementById('bol_plan_fit');
+          b.innerHTML += Bol;
+
+         var v = document.getElementById('vista_plan_fit');
+         v.innerHTML += Vista;
+        }
+
+        
+         document.getElementById('grandtotal_recrut').value = GrandPlanFit;
+
+      }
+
+    </script>
+
+    <script type="text/javascript">
+
+      function CalcDoc (){
+
+        document.getElementById('doc_implemen').innerHTML = '';
+
+        //Preço Mínimo
+        var PrecoMin = "";
+        var z = document.getElementById('doc_implemen');
+        z.innerHTML += PrecoMin;
+
+        var NumColabs = document.getElementById('colab_casa').value; 
+        var NumCasas = document.getElementById('num_casas').value; 
+        var AdmiMes = document.getElementById('adm_onb').value; 
+
+        var CasaSize = NumColabs * NumCasas;
+
+        var AdmAno = AdmiMes * 12;
+        
+        ///////////////////////////////////////// INICIO PEQUENA
+        if (CasaSize <= 299) {
+
+          if (AdmAno <= 120) {
+           var ValorMes = 890; 
+
+           var Anual = ValorMes * 12;
+          }
+
+          if (AdmAno >= 121 && AdmAno <= 300) {
+            
+            var ValorMes = 1206; 
+
+           var Anual = ValorMes * 12;
+
+          }
+          
+          var PrecoMin = '2.000,00';
+          var z = document.getElementById('doc_implemen');
+           z.innerHTML += PrecoMin;
+
+        }
+
+        ///////////////////////////////////////// FIM PEQUENA
+
+        ///////////////////////////////////////// INICIO MÉDIA
+
+        if (CasaSize >= 250 && CasaSize <= 999) {
+
+          if (AdmAno <= 120) {
+
+            var ValorMes = 1035; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+
+          }
+
+          if (AdmAno >= 121 && AdmAno <= 204) {
+
+            var ValorMes = 1264.5; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 205 && AdmAno <= 300) {
+
+            var ValorMes = 1538.1; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+
+          }
+
+          if (AdmAno >= 301 && AdmAno <= 440) {
+
+            var ValorMes = 1875.72; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 441 && AdmAno <= 660) {
+
+            var ValorMes = 2300.36; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '6.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 661 && AdmAno <= 900) {
+
+            var ValorMes = 2800.94; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '6.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 901 && AdmAno <= 1200) {
+
+            var ValorMes = 3406.12; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '6.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+          
+        }
+
+        ///////////////////////////////////////// FIM MÉDIA
+
+        ///////////////////////////////////////// INICIO GRANDE
+
+        if (CasaSize >= 1000) {
+         
+         if (AdmAno <= 120) {
+
+            var ValorMes = 1500; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '7.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+
+          }
+
+          if (AdmAno >= 121 && AdmAno <= 300) {
+
+            var ValorMes = 1950; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '7.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+
+          if (AdmAno >= 301 && AdmAno <= 440) {
+
+            var ValorMes = 2535; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '8.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 441 && AdmAno <= 660) {
+
+            var ValorMes = 3169; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '8.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 661 && AdmAno <= 900) {
+
+            var ValorMes = 3962; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '10.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 901 && AdmAno <= 1200) {
+
+            var ValorMes = 4953; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '12.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 1201 && AdmAno <= 2400) {
+
+            var ValorMes = 5944; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '12.000,00';
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 2401 && AdmAno <= 3600) {
+
+            var ValorMes = 7133; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 3601 && AdmAno <= 4800) {
+
+            var ValorMes = 8560; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 4801 && AdmAno <= 7200) {
+
+            var ValorMes = 10700; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 7201 && AdmAno <= 9600) {
+
+            var ValorMes = 13375; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 9601 && AdmAno <= 12000) {
+
+            var ValorMes = 17388; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 12001 && AdmAno <= 14400) {
+
+            var ValorMes = 22605; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 14401 && AdmAno <= 16800) {
+
+            var ValorMes = 29387; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 16801 && AdmAno <= 18000) {
+
+            var ValorMes = 38204; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('doc_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+        }
+
+        ///////////////////////////////////////// FINAL GRANDE
+
+        
+         document.getElementById('grandtotal_docs').value = Anual;
+
+      }
+
+    </script>
+
+    <script type="text/javascript">
+
+      function CalcOnb (){
+
+        document.getElementById('onb_implemen').innerHTML = '';
+
+        //Preço Mínimo
+        var PrecoMin = "";
+        var z = document.getElementById('onb_implemen');
+        z.innerHTML += PrecoMin;
+
+        var NumColabs = document.getElementById('colab_casa').value; 
+        var NumCasas = document.getElementById('num_casas').value; 
+        var AdmiMes = document.getElementById('adm_onb').value; 
+
+        var CasaSize = NumColabs * NumCasas;
+
+        var AdmAno = AdmiMes * 12;
+        
+        ///////////////////////////////////////// INICIO PEQUENA
+        if (CasaSize <= 299) {
+
+          if (AdmAno <= 120) {
+           var ValorMes = 590; 
+
+           var Anual = ValorMes * 12;
+          }
+
+          if (AdmAno >= 121 && AdmAno <= 300) {
+            
+            var ValorMes = 708; 
+
+           var Anual = ValorMes * 12;
+
+          }
+          
+          var PrecoMin = '2.000,00';
+          var z = document.getElementById('onb_implemen');
+           z.innerHTML += PrecoMin;
+
+        }
+
+        ///////////////////////////////////////// FIM PEQUENA
+
+        ///////////////////////////////////////// INICIO MÉDIA
+
+        if (CasaSize >= 250 && CasaSize <= 999) {
+
+          if (AdmAno <= 120) {
+
+            var ValorMes = 890; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+
+          }
+
+          if (AdmAno >= 121 && AdmAno <= 204) {
+
+            var ValorMes = 1068; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 205 && AdmAno <= 300) {
+
+            var ValorMes = 1281.6; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+
+          }
+
+          if (AdmAno >= 301 && AdmAno <= 440) {
+
+            var ValorMes = 1537.92; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '3.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 441 && AdmAno <= 660) {
+
+            var ValorMes = 1845.5; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '6.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 661 && AdmAno <= 900) {
+
+            var ValorMes = 2214.6; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '6.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 901 && AdmAno <= 1200) {
+
+            var ValorMes = 2657.53; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '6.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+          
+        }
+
+        ///////////////////////////////////////// FIM MÉDIA
+
+        ///////////////////////////////////////// INICIO GRANDE
+
+        if (CasaSize >= 1000) {
+         
+         if (AdmAno <= 120) {
+
+            var ValorMes = 990; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '7.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+
+          }
+
+          if (AdmAno >= 121 && AdmAno <= 300) {
+
+            var ValorMes = 1287; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '7.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+
+          if (AdmAno >= 301 && AdmAno <= 440) {
+
+            var ValorMes = 1674; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '8.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 441 && AdmAno <= 660) {
+
+            var ValorMes = 2177; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '8.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 661 && AdmAno <= 900) {
+
+            var ValorMes = 2831; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '10.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 901 && AdmAno <= 1200) {
+
+            var ValorMes = 3681; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '12.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 1201 && AdmAno <= 2400) {
+
+            var ValorMes = 4602; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = '12.000,00';
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 2401 && AdmAno <= 3600) {
+
+            var ValorMes = 5753; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 3601 && AdmAno <= 4800) {
+
+            var ValorMes = 7192; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 4801 && AdmAno <= 7200) {
+
+            var ValorMes = 8990; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 7201 && AdmAno <= 9600) {
+
+            var ValorMes = 11238; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 9601 && AdmAno <= 12000) {
+
+            var ValorMes = 14048; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 12001 && AdmAno <= 14400) {
+
+            var ValorMes = 18263; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 14401 && AdmAno <= 16800) {
+
+            var ValorMes = 23742; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+          if (AdmAno >= 16801 && AdmAno <= 18000) {
+
+            var ValorMes = 30865; 
+
+           var Anual = ValorMes * 12;
+
+          var PrecoMin = ValorMes * 3;
+          var z = document.getElementById('onb_implemen');
+          z.innerHTML += PrecoMin;
+
+          }
+
+        }
+
+        ///////////////////////////////////////// FINAL GRANDE
+
+        
+         document.getElementById('grandtotal_onb').value = Anual;
+
+      }
+
+    </script>
+
+    <script type="text/javascript">
+
+      function CalcEdu (){
+
+        var NumAcessos = document.getElementById('acessos_univ').value; 
+        
+        if (NumAcessos <= 100) {
+
+          var ValorMes = 300;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+        if (NumAcessos >= 101 && NumAcessos <= 200) {
+
+          var ValorMes = 580;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+        if (NumAcessos >= 201 && NumAcessos <= 500) {
+
+          var ValorMes = 980;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+        if (NumAcessos >= 501 && NumAcessos <= 700) {
+
+          var ValorMes = 1480;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+        if (NumAcessos >= 701 && NumAcessos <= 1000) {
+
+          var ValorMes = 2180;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+        if (NumAcessos >= 1001 && NumAcessos <= 2000) {
+
+          var ValorMes = 2980;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+        if (NumAcessos >= 2001 && NumAcessos <= 5000) {
+
+          var ValorMes = 5680;
+
+          var Anual = ValorMes * 12;
+
+        }
+
+
+        
+         document.getElementById('grandtotal_edu').value = Anual;
+
       }
 
     </script>
