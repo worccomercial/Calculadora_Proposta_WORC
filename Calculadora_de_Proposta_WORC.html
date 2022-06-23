@@ -346,17 +346,17 @@ $('#edu_tot').fadeOut('slow');
 
                                     <div class="form-group field" style="margin-bottom: 20px;">
                                       <label for="userName">Nome Estabelecimento:</label>
-                                        <input name="nome_estabelecimento" type="text"> 
+                                        <input name="nome_estabelecimento" class="xxx" type="text"> 
                                     </div>
 
                                     <div class="form-group field" style="margin-bottom: 20px;">
                                       <label for="userName">Responsável:</label>
-                                        <input name="responsavel" type="text"> 
+                                        <input name="responsavel" class="xxx" type="text"> 
                                     </div>
 
                                     <div class="form-group" style="margin-bottom: 10px;">  
                                       <label for="cars">AE (Closer): </label>
-                                        <select name="closer" onchange="showDiv('hidden_div', this)">
+                                        <select name="closer" class="xxx" onchange="showDiv('hidden_div', this)">
                                           <option value="">Selecione seu nome</option>
                                           <option value="Alexandre Vieira">Alexandre Vieira</option>
                                           <option value="Bruno Favero">Bruno Favero</option>
@@ -381,7 +381,7 @@ $('#edu_tot').fadeOut('slow');
                                     
                                     <div class="form-group" style="margin-bottom: 20px;">  
                                       <label for="cars">Método de proposta: </label>
-                                        <select name="met_proposta" id="met_prop">
+                                        <select name="met_proposta" class="xxx" id="met_prop">
                                           <option value="">Selecione uma opção</option>
                                           <option value="Por plano">Por plano</option>
                                           <option value="Por produto">Por produto</option>
@@ -390,7 +390,7 @@ $('#edu_tot').fadeOut('slow');
 
                                     <div class="form-group" style="margin-bottom: 10px; display: none;" id="planos">  
                                       <label for="cars">Plano: </label>
-                                        <select name="plano" id="planos_opt">
+                                        <select name="plano" class="xxx" id="planos_opt">
                                           <option value="">Selecione uma opção</option>
                                           <option value="Fit">Fit</option>
                                           <option value="Plus">Plus</option>
@@ -399,20 +399,20 @@ $('#edu_tot').fadeOut('slow');
                                     </div>
 
                                     <div class="form-group" style="display: none;">
-                                      <input type="text" name="hello" oninput="CalcPlanFit();" id="mySelect">
+                                      <input type="text" class="xxx" name="hello" oninput="CalcPlanFit();" id="mySelect">
                                     </div>
 
 
                                   <div class="form-group" style="margin-bottom: 0px; display: none;" id="produtos">  
                                     <label for="cars">Produto:</label>
                                     <br>
-                                    <input type="checkbox" class="recru_opt" name="product_one" value="Recrutamento + Ponto Eletrônico">
+                                    <input type="checkbox" class="recru_opt xxx" name="product_one" value="Recrutamento + Ponto Eletrônico">
                                     <label for="vehicle1"> Recrutamento + Ponto Eletrônico</label><br>
-                                    <input type="checkbox" class="dopex" name="product_two" value="Documentação">
+                                    <input type="checkbox" class="dopex xxx" name="product_two" value="Documentação">
                                     <label for="vehicle2"> Documentação</label><br>
-                                    <input type="checkbox" class="dope" name="product_three" value="Onboarding">
+                                    <input type="checkbox" class="dope xxx" name="product_three" value="Onboarding">
                                     <label for="vehicle3"> Onboarding</label><br>
-                                    <input type="checkbox" class="edu_opt" name="product_four" value="Educação">
+                                    <input type="checkbox" class="edu_opt xxx" name="product_four" value="Educação">
                                     <label for="vehicle3"> Educação</label><br><br>
                                   </div>
 
@@ -424,28 +424,28 @@ $('#edu_tot').fadeOut('slow');
 
                                       <div class="form-group field">  
                                       <label>Número de Casas:</label>
-                                      <input type="text" id="num_casas" name="numero_casas" value="" title="Quantidade de Acessos" oninput="CalcCasas(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 5" style="margin-bottom: 20px;">
+                                      <input type="text" id="num_casas" class="xxx" name="numero_casas" value="" title="Quantidade de Acessos" oninput="CalcCasas(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 5" style="margin-bottom: 20px;">
                                     </div>
 
                                     <div class="form-group" style="display: none;">
-                                      <input type="text" name="hello" id="acrescasas">
+                                      <input type="text" name="hello" class="xxx" id="acrescasas">
                                     </div>
 
                                     <div class="form-group field">  
                                       <label>Colaboradores p/ Casa:</label>
-                                      <input type="text" id="colab_casa" value="" name="colabas_pcasa" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                      <input type="text" id="colab_casa" class="xxx" value="" name="colabas_pcasa" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
                                     </div>
 
                                   </div>
 
                                     <div class="form-group" style="display: none;" id="admissao">  
                                       <label>Admissões & Onboarding p/ Mês:</label>
-                                      <input type="text" id="adm_onb" value="" name="admissao_mes" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                      <input type="text" id="adm_onb" class="xxx" value="" name="admissao_mes" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcOnb(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
                                     </div>
 
                                     <div class="form-group" style="display: none;" id="universidade">  
                                       <label>Acessos à universidade:</label>
-                                      <input type="text" id="acessos_univ" value="" name="acess_universidade" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcEdu(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
+                                      <input type="text" id="acessos_univ" class="xxx" value="" name="acess_universidade" oninput="CalcColabs(); CalcPlanFit(); CalcRecrut(); CalcDoc(); CalcEdu(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="Ex: 30" title="Qtde. Média de Propostas" style="margin-bottom: 20px;">
                                     </div>
 
 
@@ -465,7 +465,9 @@ $('#edu_tot').fadeOut('slow');
                               <hr style="margin-bottom: 30px; margin-top: 30px">
 
                                 <div id="preco_geral" style="display: none">
-
+                                  
+                                 <button onClick="window.location.reload();">Novo cálculo</button><br><br>
+                                
                                   <div id="plan_section" style="display: none" >
 
                                     <div class="form-group" style="font-size: 30px;">  
@@ -618,6 +620,7 @@ $('#edu_tot').fadeOut('slow');
     <script type="text/javascript">
         function showPricePlan() {
           document.getElementById('preco_geral').style.display = "block";
+          $('.xxx').prop("disabled", true);
           }
       </script> 
 
