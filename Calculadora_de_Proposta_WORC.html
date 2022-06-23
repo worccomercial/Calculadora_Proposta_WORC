@@ -468,7 +468,7 @@ $('#edu_tot').fadeOut('slow');
                                   
                                  <button onClick="window.location.reload();">Novo cálculo</button><br><br>
                                 
-                                  <div id="plan_section" style="display: none" >
+                                  <div id="plan_section" style="display: none">
 
                                     <div class="form-group" style="font-size: 30px;">  
                                       <label>Total:</label>
@@ -842,10 +842,7 @@ $('#edu_tot').fadeOut('slow');
 
       function CalcRecrut (){
 
-        document.getElementById('preco_minimo').innerHTML = '';
-        document.getElementById('parc_plan_fit').innerHTML = '';
-        document.getElementById('bol_plan_fit').innerHTML = '';
-        document.getElementById('vista_plan_fit').innerHTML = '';
+        
 
         var ValorPlan = 490;
         var AcresCasas = document.getElementById('acrescasas').value;
@@ -866,19 +863,7 @@ $('#edu_tot').fadeOut('slow');
           var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
 
           
-          var z = document.getElementById('preco_minimo');
-          z.innerHTML += PrecoMin;
-
-          var o = document.getElementById('parc_plan_fit');
-          o.innerHTML += STPF;
-
           
-          var b = document.getElementById('bol_plan_fit');
-          b.innerHTML += Bol;
-
-
-         var v = document.getElementById('vista_plan_fit');
-         v.innerHTML += Vista;
 
 
         }
@@ -899,20 +884,7 @@ $('#edu_tot').fadeOut('slow');
           var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
 
           
-          var z = document.getElementById('preco_minimo');
-          z.innerHTML += PrecoMin;
-
-
           
-          var o = document.getElementById('parc_plan_fit');
-          o.innerHTML += STPF;
-
-          
-          var b = document.getElementById('bol_plan_fit');
-          b.innerHTML += Bol;
-
-         var v = document.getElementById('vista_plan_fit');
-         v.innerHTML += Vista;
         }
 
 
@@ -942,19 +914,7 @@ $('#edu_tot').fadeOut('slow');
           var PrecoMin = parseFloat(GrandPlanFit) - parseFloat(PorcentDiscount);
 
           
-          var z = document.getElementById('preco_minimo');
-          z.innerHTML += PrecoMin;
-
           
-          var o = document.getElementById('parc_plan_fit');
-          o.innerHTML += ValorMes;
-
-          
-          var b = document.getElementById('bol_plan_fit');
-          b.innerHTML += Bol;
-
-         var v = document.getElementById('vista_plan_fit');
-         v.innerHTML += Vista;
         }
 
         
@@ -1786,3 +1746,4 @@ $('#edu_tot').fadeOut('slow');
     <!-- End custom js for this page -->
   </body>
 </html>
+
